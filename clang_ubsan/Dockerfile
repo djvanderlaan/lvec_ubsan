@@ -40,6 +40,7 @@ RUN echo "local({ r <- getOption('repos'); r['CRAN'] <- 'https://cloud.r-project
   && Rscript -e "install.packages(c('Rcpp', 'devtools', 'BH', 'testthat', 'roxygen2'))"
 
 # Fix some stuff in Makeconf to make sure UBSAN tests for virtual pointers are run
-RUN sed -e "s/SHLIB_LIBADD =/SHLIB_LIBADD = -lubsan/g" /usr/local/lib/R/etc/Makeconf  > /usr/local/lib/R/etc/Makeconf \
-  && sed -e "s/,vptr//g" /usr/local/lib/R/etc/Makeconf  > /usr/local/lib/R/etc/Makeconf
+RUN sed -e "s/SHLIB_LIBADD =/SHLIB_LIBADD = -lubsan/g" /usr/local/lib/R/etc/Makeconf  > /usr/local/lib/R/etc/Makeconf.tmp \
+  && sed -e "s/,vptr//g" /usr/local/lib/R/etc/Makeconf.tmp  > /usr/local/lib/R/etc/Makeconf \
+  && rm /usr/local/lib/R/etc/Makeconf.tmp
 

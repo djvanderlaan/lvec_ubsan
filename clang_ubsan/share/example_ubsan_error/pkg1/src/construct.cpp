@@ -1,6 +1,5 @@
 #include "../inst/include/pkg1.h"
 
-
 // [[Rcpp::export]]
 RcppExport SEXP new_foobar(int i) {
   BEGIN_RCPP
@@ -19,11 +18,18 @@ RcppExport SEXP new_foobard(double i) {
 
 
 // [[Rcpp::export]]
-RcppExport int get_foobar(Rcpp::XPtr<Foo> x) {
+RcppExport int get_foobar(SEXP xp) {
+  Rcpp::XPtr<Foo> x(xp);
   Foo* y1 = x;
-  FooBar<int>* y = dynamic_cast<FooBar<int>*>(y1);
-  return y->i();
+  FooBar<int>* y2 = dynamic_cast<FooBar<int>*>(y1);
+  return y2->i();
 }
+
+//RcppExport int get_foobar(Rcpp::XPtr<Foo> x) {
+  //Foo* y1 = x;
+  //FooBar<int>* y = dynamic_cast<FooBar<int>*>(y1);
+  //return y->i();
+//}
 
 
 // [[Rcpp::export]]

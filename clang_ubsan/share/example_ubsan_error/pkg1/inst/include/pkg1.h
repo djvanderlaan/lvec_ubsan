@@ -12,7 +12,6 @@ class FooBarVisitor {
     virtual void visit(FooBar<int>& vec) = 0;
 };
 
-
 // ==== FOO
 class Foo {
   public:
@@ -21,7 +20,6 @@ class Foo {
 
     virtual void visit(FooBarVisitor* visitor) = 0;
 };
-
 
 // ==== FOOBAR
 template<typename T>
@@ -41,7 +39,5 @@ class FooBar : public Foo {
   private:
     T i_;
 };
-
-
 
 #endif

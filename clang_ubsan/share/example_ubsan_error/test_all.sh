@@ -4,9 +4,9 @@ cd pkg1
 make clean
 make test
 make install
-cd..
+cd ..
 
 cd pkg2
 make clean
 make test
-cd..
+cd ..
