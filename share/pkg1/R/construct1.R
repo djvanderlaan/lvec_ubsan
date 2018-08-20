@@ -1,7 +1,7 @@
+.onLoad <- function(libname, pkgname) {
+  library.dynam(pkgname, pkgname, .libPaths(), local=FALSE)
+}
 
-
-
-#' @useDynLib pkg1
 #' @importFrom Rcpp sourceCpp
 #' @export
 foobar <- function(x) {
