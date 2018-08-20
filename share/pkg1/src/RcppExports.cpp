@@ -7,7 +7,7 @@
 using namespace Rcpp;
 
 // new_foobar
-RcppExport SEXP new_foobar(int i);
+SEXP new_foobar(int i);
 RcppExport SEXP _pkg1_new_foobar(SEXP iSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -18,7 +18,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // new_foobard
-RcppExport SEXP new_foobard(double i);
+SEXP new_foobard(double i);
 RcppExport SEXP _pkg1_new_foobard(SEXP iSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

@@ -1,19 +1,15 @@
 #include "../inst/include/pkg1.h"
 
 // [[Rcpp::export]]
-RcppExport SEXP new_foobar(int i) {
-  BEGIN_RCPP
+SEXP new_foobar(int i) {
   FooBar<int>* x = new FooBar<int>(i);
   return Rcpp::XPtr<Foo>(x, true);
-  END_RCPP
 }
 
 // [[Rcpp::export]]
-RcppExport SEXP new_foobard(double i) {
-  BEGIN_RCPP
+SEXP new_foobard(double i) {
   FooBar<double>* x = new FooBar<double>(i);
   return Rcpp::XPtr<Foo>(x, true);
-  END_RCPP
 }
 
 

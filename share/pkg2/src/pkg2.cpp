@@ -8,3 +8,4 @@ RcppExport int get_foobar(SEXP xp) {
   FooBar<int>* y2 = dynamic_cast<FooBar<int>*>(y1);
   return y2->i();
 }
+
