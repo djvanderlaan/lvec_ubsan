@@ -1,5 +1,5 @@
 .onLoad <- function(libname, pkgname) {
-  library.dynam(pkgname, pkgname, .libPaths(), local=FALSE)
+  library.dynam(pkgname, pkgname, libname, local=FALSE)
 }
 
 #' @importFrom Rcpp sourceCpp
